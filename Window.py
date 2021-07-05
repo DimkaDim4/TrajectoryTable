@@ -9,6 +9,7 @@ class Window(QWidget):
         QWidget.__init__(self, parent)
 
         self.model = Model(self)
+        self.model.loadData(testData)
 
         self.model.TableModel.setHeaderData(0, Qt.Orientation.Horizontal, "Id")
         self.model.TableModel.setHeaderData(1, Qt.Orientation.Horizontal, "X")
@@ -18,13 +19,14 @@ class Window(QWidget):
         self.view = QTableView(self)
         self.view.setModel(self.model.TableModel)
         self.view.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.view.setSelectionBehavior(QAbstractItemView.SelectRows)
+        # self.view.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.view.setColumnHidden(0, True)
         self.view.resizeColumnsToContents()
-        self.view.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        # self.view.resizeRowsToContents()
+        # self.view.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-        delegate = ColorDelegate(self.view)
-        self.view.setItemDelegate(delegate)
+        # delegate = ColorDelegate(self.view)
+        # self.view.setItemDelegate(delegate)
 
         vbox = QVBoxLayout(self)
         vbox.addWidget(self.view)
