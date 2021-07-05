@@ -21,7 +21,7 @@ class Window(QWidget):
         self.view.setSelectionMode(QAbstractItemView.SingleSelection)
         # self.view.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.view.setColumnHidden(0, True)
-        self.view.resizeColumnsToContents()
+        # self.view.resizeColumnsToContents()
         # self.view.resizeRowsToContents()
         # self.view.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
